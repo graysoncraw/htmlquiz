@@ -5,11 +5,128 @@
         <link rel="stylesheet" href="styling.css">
         <font face="Helvetica">
             <h1> 
-                Sign-Up Form            
+                Sign-Up Form
             </h1>
         
         <hr width="60%">
     </head>
+    <script>
+        function confirmPassword(){
+            var pass = document.getElementById("pwid").value;
+            var cpass = document.getElementById("cpwid").value;
+
+            if(pass != cpass){
+                alert("Error. Passwords do not match.");
+            }
+            else{
+                document.location.href = "home.html";
+            }
+        }
+
+        function dob(){
+            var dob = document.getElementById("dobid").value;
+            alert("DOB: " + dob);
+        }
+
+        function degrees(){
+            var edustring = "";
+            if (document.getElementById("HS").checked){
+                edustring += "HS Degree \n";
+            }
+            if (document.getElementById("BS").checked){
+                edustring += "BS Degree \n";
+
+            }
+            if (document.getElementById("MS").checked){
+                edustring += "MS Degree \n";
+
+            }
+            if (document.getElementById("PhD").checked){
+                edustring += "PhD Degree";
+            }
+            
+            alert("Degrees: " + "\n" +edustring);
+        }
+
+        function skills(){
+            var skillstring = "";
+            if (document.getElementById("PY").checked){
+                skillstring += "Python \n";
+            }
+            if (document.getElementById("Java").checked){
+                skillstring += "Java \n";
+
+            }
+            if (document.getElementById("CPP").checked){
+                skillstring += "CPP \n";
+
+            }
+            if (document.getElementById("CS").checked){
+                skillstring += "CS \n";
+
+            }
+            if (document.getElementById("CSS").checked){
+                skillstring += "CSS \n";
+
+            }
+            if (document.getElementById("JS").checked){
+                skillstring += "JS \n";
+
+            }
+            if (document.getElementById("HTML").checked){
+                skillstring += "HTML \n";
+
+            }
+            if (document.getElementById("MySQL").checked){
+                skillstring += "MySQL \n";
+
+            }
+            if (document.getElementById("MongoDB").checked){
+                skillstring += "MongoDB \n";
+
+            }
+            if (document.getElementById("swift").checked){
+                skillstring += "Swift \n";
+
+            }
+            if (document.getElementById("PHP").checked){
+                skillstring += "PHP \n";
+            }
+            
+            var notes = document.getElementById("notes").value;
+            skillstring += notes;
+
+            alert("Skills: " + "\n" + skillstring);
+        }
+
+        //check if form is actually filled out
+        function proceedToHome(){
+            if(document.getElementById("fnameid").value != "" && document.getElementById("lnameid").value != ""
+            && document.getElementById("dobid").value != "" && document.getElementById("userid").value != ""
+            && document.getElementById("emailid").value != "" && document.getElementById("pwid").value != "" &&
+            document.getElementById("cpwid").value != ""){
+                confirmPassword();
+            }
+            else{
+                alert("Error. Please fill out the form.");
+            }
+    
+        }
+        function reset(){
+                document.getElementById("fnameid").value="";
+                document.getElementById("lnameid").value="";
+                document.getElementById("dobid").value="";
+                document.getElementById("userid").value="";
+                document.getElementById("emailid").value="";
+                document.getElementById("pwid").value="";
+                document.getElementById("cpwid").value="";
+                document.getElementById("notes").value="";
+                document.getElementById("notes1").value="";
+
+                //uncheck radios and boxes here
+
+            }
+    </script>
     <body bgcolor="#90d5e8">
         <table style="border-collapse: collapse;" cellpadding=10px border="2" width="40%" bgcolor="e1e7e8">
             <tr align="center">
@@ -50,7 +167,7 @@
                     Education
                 </td>
                 <td width="25%">
-                    HS: <input type="checkbox" id="Highschool" name="Highschool" value="HS"/>
+                    HS: <input type="checkbox" id="HS" name="Highschool" value="HS"/>
                     BS: <input type="checkbox" id="BS" name="BS" value="BS"/>
                     MS: <input type="checkbox" id="MS" name="MS" value="MS"/>
                     PhD: <input type="checkbox" id="PhD" name="PhD" value="Doctorate"/> <br>
@@ -117,7 +234,7 @@
                     Password
                 </td>
                 <td width="25%">
-                    <input type="password" name="pwid" id="pwid" />
+                    <input type="password" name="pwid" id="pwid"/>
                 </td>
             </tr>
             <tr align="center">
@@ -133,16 +250,16 @@
                     Any Other Notes
                 </td>
                 <td width="25%">
-                    <textarea id="notes" name="notes"> </textarea>
+                    <textarea id="notes1" name="notes"> </textarea>
                 </td>
             </tr>
             <tr align="center">
-                <td colspan="2">
-                    <a href="home.html">
-                        <button type="signupbutton" name="singup" id="singup" class="loginsignupblock">Sign Up</button> 
-
-                    </a>
-                </td>               
+                <td colspan="1">
+                    <button type="resetbutton" name="reset" id="reset" class="loginsignupblock" onclick="reset();">Reset</button> 
+                </td>    
+                <td>
+                    <button type="signupbutton" name="singup" id="singup" class="loginsignupblock" onclick="dob();degrees();skills();proceedToHome();">Sign Up</button> 
+                </td>           
             </tr>
         </table>
     </body>

@@ -11,6 +11,29 @@
             </font>
             <hr width="60%">
         </head>
+
+        <script>
+            function displayCreds(){
+                var name = document.getElementById("userid").value;
+                var pass = document.getElementById("passid").value;
+
+                if (name == "username" && pass == "password"){
+                    alert("Valid Login");
+                    document.location.href = "home.html";
+                }
+                else{
+                    alert("Invalid Login");
+                }
+                // alert("Username: " + name + "\n" +  "Password: " + pass);
+
+            }
+            function reset(){
+                document.getElementById("userid").value="";
+                document.getElementById("passid").value="";
+            }
+    
+        </script>
+
         <body bgcolor="#90d5e8">
             <font face="Helvetica">
             <table style="border-collapse: collapse;" cellpadding=10px border="2" width="40%" bgcolor="e1e7e8">
@@ -32,16 +55,14 @@
                 </tr>
                 <tr align="center">
                     <td colspan="2"> 
-                    <a href="home.html">
-                        <button type="loginbutton" name="login" id="login" class="loginsignupblock">Login</button>
-                    </a> <br>
+                        <button type="loginbutton" name="login" id="login" class="loginsignupblock" onclick="javascript:displayCreds()">Login</button>
                     </td>
                     <td>
-                        or <br>
+                        <button type="resetbutton" name="reset" id="reset" class="loginsignupblock" onclick="javascript:reset()">Reset</button>
                     </td>
                     <td>
                         <a href="signup.html">
-                            <button type="signup" name="signup" id="signup" class="loginsignupblock">Sign-Up</button>
+                            <button type="signup" name="signup" id="signup" class="loginsignupblock" >Sign-Up</button>
                         </a>
                     </td>
                 </td>

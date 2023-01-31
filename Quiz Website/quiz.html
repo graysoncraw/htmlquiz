@@ -5,112 +5,170 @@
     <font face="Helvetica">
     <head>
         <link rel="stylesheet" href="styling.css">
-        <h1 >
+        <h1>
         Welcome to the Quiz! <br>
         </h1>
     </head>
-    
+    <script>
+        var points=0;
+        var ele;
+        function evaluate_quiz()
+        {
+            for (j = 1; j <= 10; j++){
+                ele = document.getElementsByName("q"+j);
+                //loop thru the 4 questions
+                for(i = 0; i < ele.length; i++) {
+                    //if a question is checked
+                    if(ele[i].checked && ele[i].value=="HK")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="Amazon")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="4")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="Venus")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="SR")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="Brazil")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="SG")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="MICRO")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="Ukraine")
+                    {
+                        points++;
+                    }
+                    else if(ele[i].checked && ele[i].value=="three")
+                    {
+                        points++;
+                    }
+                }
+            }
+            if (points == 1){
+                alert("You have scored: " + points + " point!");
+            }
+            else{
+                alert("You have scored: " + points + " points!");
+            }
+        }
+    </script>
     <body bgcolor="#90d5e8">
         <table width="40%">
             <tr align="center">
                 <td >
                     1. What country has the highest life expectancy? <br>
-                    USA <input type="radio" id="USA" name="q1" /> <br>
-                    Japan <input type="radio" id="Japan" name="q1" /> <br>
-                    Switzerland <input type="radio" id="Switz" name="q1" /> <br>
-                    Hong Kong <input type="radio" id="HK" name="q1" /> <br>
+                    USA<input type="radio" id="USA" name="q1" value="USA" /> <br>
+                    Japan<input type="radio" id="Japan" name="q1" value="Japan" /> <br>
+                    Switzerland<input type="radio" id="Switz" name="q1" value="Switz"  /> <br>
+                    Hong Kong<input type="radio" id="HK" name="q1" value="HK" /> <br>
                 </td>
             </tr>
             <tr align="center">
                 <td bgcolor="b6d9e3">
                     2. What company was originally called "Cadabra"? <br>
-                    Google <input type="radio" id="Google" name="q2" /> <br>
-                    Amazon <input type="radio" id="Amazon" name="q2" /> <br>
-                    Walmart <input type="radio" id="Walmart" name="q2" /> <br>
-                    Youtube <input type="radio" id="YT" name="q2" /> <br>
+                    Google <input type="radio" id="Google" name="q2" value="Google" /> <br>
+                    Amazon <input type="radio" id="Amazon" name="q2" value="Amazon" /> <br>
+                    Walmart <input type="radio" id="Walmart" name="q2" value="Walmart" /> <br>
+                    Youtube <input type="radio" id="YT" name="q2" value="Youtube" /> <br>
                 </td>
             </tr>
             <tr align="center">
                 <td>
                     3. How many ghosts chase Pac-Man at the start of each game? <br>
-                    2 <input type="radio" id="2" name="q3" /> <br>
-                    3 <input type="radio" id="3" name="q3" /> <br>
-                    4 <input type="radio" id="4" name="q3" /> <br>
-                    5 <input type="radio" id="5" name="q3" /> <br>
+                    2 <input type="radio" id="2" name="q3" value="2"/> <br>
+                    3 <input type="radio" id="3" name="q3" value="3"/> <br>
+                    4 <input type="radio" id="4" name="q3" value="4"/> <br>
+                    5 <input type="radio" id="5" name="q3" value="5"/> <br>
                 </td>
             </tr>
             <tr align="center">
                 <td bgcolor="b6d9e3">
                     4. Which planet in the Milky Way is the hottest? <br>
-                    Mercury <input type="radio" id="Mercury" name="q4" /> <br>
-                    Venus <input type="radio" id="Venus" name="q4" /> <br>
-                    Jupiter <input type="radio" id="Jupiter" name="q4" /> <br>
-                    Neptune <input type="radio" id="Neptune" name="q4" /> <br>
+                    Mercury <input type="radio" id="Mercury" name="q4" value="Mercury"/> <br>
+                    Venus <input type="radio" id="Venus" name="q4" value="Venus"/> <br>
+                    Jupiter <input type="radio" id="Jupiter" name="q4" value="Jupiter"/> <br>
+                    Neptune <input type="radio" id="Neptune" name="q4" value="Neptune"/> <br>
                 </td>
             </tr>
             <tr align="center">
                 <td>
                     5. What is the highest-rated film on IMDb as of January 1st, 2023? <br>
-                    The Dark Knight <input type="radio" id="DK" name="q5" /> <br>
-                    The Shawshank Redemption <input type="radio" id="SR" name="q5" /> <br>
-                    The Godfather <input type="radio" id="GF" name="q5" /> <br>
-                    Inception <input type="radio" id="Inception" name="q5" /> <br>
+                    The Dark Knight <input type="radio" id="DK" name="q5" value="DK"/> <br>
+                    The Shawshank Redemption <input type="radio" id="SR" name="q5" value="SR"/> <br>
+                    The Godfather <input type="radio" id="GF" name="q5" value="GF"/> <br>
+                    Inception <input type="radio" id="Inception" name="q5" value="Inception"/> <br>
                 </td>
 
             </tr>
             <tr align="center">
                 <td bgcolor="b6d9e3">
                     6. What country has won the most World Cups? <br>
-                    Brazil <input type="radio" id="Brazil" name="q6" /> <br>
-                    Argentina <input type="radio" id="Argentina" name="q6" /> <br>
-                    Italy <input type="radio" id="Italy" name="q6" /> <br>
-                    Germany <input type="radio" id="Germany" name="q6" /> <br>
+                    Brazil <input type="radio" id="Brazil" name="q6" value="Brazil"/> <br>
+                    Argentina <input type="radio" id="Argentina" name="q6" value="Argentina"/> <br>
+                    Italy <input type="radio" id="Italy" name="q6" value="Italy"/> <br>
+                    Germany <input type="radio" id="Germany" name="q6" value="Germany"/> <br>
                 </td>
                 
             </tr>
             <tr align="center">
                 <td>
                     7. What Netflix show had the most streaming views in 2021?<br>
-                    Lucifer <input type="radio" id="Lucifer" name="q7" /> <br>
-                    Criminal Minds <input type="radio" id="criminal" name="q7" /> <br>
-                    Lupin <input type="radio" id="Lupin" name="q7" /> <br>
-                    Squid Game <input type="radio" id="squid" name="q7" /> <br>
+                    Lucifer <input type="radio" id="Lucifer" name="q7" value="Lucifer"/> <br>
+                    Criminal Minds <input type="radio" id="criminal" name="q7" value="CM"/> <br>
+                    Lupin <input type="radio" id="Lupin" name="q7" value="Lupin"/> <br>
+                    Squid Game <input type="radio" id="squid" name="q7" value="SG"/> <br>
                 </td>
                 
             </tr>
             <tr align="center">
                 <td bgcolor="b6d9e3">
                     8. What software company is headquartered in Redmond, Washington? <br>
-                    Amazon <input type="radio" id="amzn" name="q8" /> <br>
-                    Google <input type="radio" id="googl" name="q8" /> <br>
-                    Apple <input type="radio" id="aapl" name="q8" /> <br>
-                    Microsoft <input type="radio" id="msft" name="q8" /> <br>
+                    Amazon <input type="radio" id="amzn" name="q8" value="AMZN"/> <br>
+                    Google <input type="radio" id="googl" name="q8" value="GOOGL"/> <br>
+                    Apple <input type="radio" id="aapl" name="q8" value="APPL"/> <br>
+                    Microsoft <input type="radio" id="msft" name="q8" value="MICRO"/> <br>
                 </td>
                 
             </tr>
             <tr align="center">
                 <td>
                     9. In what country is the Chernobyl nuclear plant located? <br>
-                    Russia <input type="radio" id="russia" name="q9" /> <br>
-                    Saudi Arabia <input type="radio" id="sa" name="q9" /> <br>
-                    Ukraine <input type="radio" id="ukr" name="q9" /> <br>
-                    Japan <input type="radio" id="jpn" name="q9" /> <br>
+                    Russia <input type="radio" id="russia" name="q9" value="Russia"/> <br>
+                    Saudi Arabia <input type="radio" id="sa" name="q9" value="SA"/> <br>
+                    Ukraine <input type="radio" id="ukr" name="q9" value="Ukraine"/> <br>
+                    Japan <input type="radio" id="jpn" name="q9" value="Japan"/> <br>
                 </td>
                 
             </tr>
             <tr align="center">
                 <td bgcolor="b6d9e3">
                     10. How many bones do we have in an ear? <br>
-                    3 <input type="radio" id="3b" name="q10" /> <br>
-                    4 <input type="radio" id="4b" name="q10" /> <br>
-                    5 <input type="radio" id="5b" name="q10" /> <br>
-                    6 <input type="radio" id="6b" name="q10" /> <br> 
+                    3 <input type="radio" id="3b" name="q10" value="three"/> <br>
+                    4 <input type="radio" id="4b" name="q10" value="four"/> <br>
+                    5 <input type="radio" id="5b" name="q10" value="five"/> <br>
+                    6 <input type="radio" id="6b" name="q10" value="six"/> <br> 
                 </td>
             </tr>
     </table> <br>
-
     <a href="logout.html">
-        <button type="sumbitbutton" name="submit" id="submit" class="quizblock">Submit</button>
+        <button type="sumbitbutton" name="submit" id="submit" class="quizblock" onclick="javascript:evaluate_quiz()">Submit</button>
     </a>
     </body>
     </font>
